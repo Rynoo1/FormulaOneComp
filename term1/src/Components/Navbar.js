@@ -6,7 +6,7 @@ export default function BasicNavbar() {
   return (
     <Navbar bg="dark" variant="dark">
         <Container>
-            <NavbarBrand href="/">Land</NavbarBrand>
+            <NavbarBrand href="/"> Landing</NavbarBrand>
             <Nav className='ne-auto'>
                 <Nav.Link href='/'>Landing page</Nav.Link>
                 <Nav.Link href='/compare'>Compare</Nav.Link>
