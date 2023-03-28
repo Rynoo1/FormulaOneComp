@@ -8,14 +8,14 @@ export default function Time() {
 
   const [seasonData, setSeasonData] = useState();
 
-  // const [driverData, setDriverData] = useState({
-  //   labels: seasonData.driver.name,
-  //   datasets: [{
-  //     label: 'Season Points',
-  //     data: seasonData.points,
-  //     tension: 0.4
-  //   }]
-  // });
+  const [driverData, setDriverData] = useState({
+    labels: seasonData.driver.name,
+    datasets: [{
+      label: 'Season Points',
+      data: seasonData.points,
+      tension: 0.4
+    }]
+  });
 
 
   const options = {
@@ -30,8 +30,9 @@ export default function Time() {
 
   useEffect(() => {
     axios.request(options).then(function (response) {
-      setSeasonData(response.data.response);
-      console.log(seasonData);
+      console.log(response.data.response[0].driver.name);
+      console.log(response.data.response[0].points);
+      //console.log(seasonData);
     }).catch(function (error) {
       console.error(error);
     });
