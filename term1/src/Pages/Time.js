@@ -8,14 +8,14 @@ export default function Time() {
 
   const [seasonData, setSeasonData] = useState();
 
-  const [driverData, setDriverData] = useState({
-    labels: seasonData.driver.name,
-    datasets: [{
-      label: 'Season Points',
-      data: seasonData.points,
-      tension: 0.4
-    }]
-  });
+  // const [driverData, setDriverData] = useState({
+  //   labels: seasonData.driver.name,
+  //   datasets: [{
+  //     label: 'Season Points',
+  //     data: seasonData.points,
+  //     tension: 0.4
+  //   }]
+  // });
 
 
   const options = {
@@ -40,7 +40,7 @@ export default function Time() {
 
   return (
     <div>
-      <LineChart ChartData={ driverData } />
+      {/* <LineChart ChartData={ driverData } /> */}
       hi
     </div>
 
