@@ -5,7 +5,6 @@ import { Chart } from 'chart.js/auto';
 function LineChart({ ChartData }) {
     return (
         <Line data={ChartData} />
-
     )
 }
 

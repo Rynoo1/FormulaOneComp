@@ -1,11 +1,25 @@
 import React, { useRef, useState } from 'react'
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function Compare() {
+
+  const [driverOne, setDriverOne] = useState('');
+  const [dataDriver, setDataDriver] = useState('');
+  const driverOneRef = useRef('');
+
+  const handleClick = (event) => {
+    setDriverOne(driverOneRef.current.value);
+  }
+
+
   const options = {
     method: 'GET',
     url: 'https://api-formula-1.p.rapidapi.com/drivers',
-    params: { search: 'lewis' },
+    params: { search: driverOne },
     headers: {
       'X-RapidAPI-Key': '8ef8fc27c6msh7504b9ec3178fa1p1a705fjsnfb988f103d4a',
       'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
@@ -23,7 +37,17 @@ export default function Compare() {
 
       <div class="w-50">
         <label for="driver1label" class="form-label">Driver One</label>
-        <input type="text" class="form-control" id="driver1name" placeholder='Max Verstappen'/>
+        {/* <input type="text" class="form-control" id="driver1name" placeholder='Max Verstappen' onChange={handleChange}/> */}
+        <InputGroup>
+          <Form.Control
+            placeholder="Driver One"
+            ref={driverOneRef}
+          />
+          <Button variant="primary" id="button-addon2" onClick={handleClick}>
+            Button
+          </Button>
+        </InputGroup>
+
         <label for="season1label" class="form-label">Season/Year</label>
         <input type="text" class="form-control" id="driver1season" placeholder="2022"></input>
       </div>
@@ -34,17 +58,6 @@ export default function Compare() {
         <label for="season2label" class="form-label">Season/Year</label>
         <input type="text" class="form-control" id="driver2season" placeholder="2022"></input>
       </div>
-
-      {/* <div>
-      <input class="form-control" list="datalistOptions" id="driverdatalist" name='driverlist1' value={this.state.driverlist1} placeholder="Type to search..." onChange={e => this.setState({driverlist1: e.target.value})}/>
-        <datalist id="datalistOptions1">
-          <option value="San Francisco"/>
-          <option value="New York"/>
-          <option value="Seattle"/>
-          <option value="Los Angeles"/>
-          <option value="Chicago"/>
-        </datalist>
-      </div> */}
 
     </div>
   )
