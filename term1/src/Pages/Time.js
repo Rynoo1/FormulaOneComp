@@ -6,10 +6,10 @@ import Form from 'react-bootstrap/Form';
 
 export default function Time() {
 
-  const [seasonData, setSeasonData] = useState();
+  const [seasonData, setSeasonData] = useState([]);
   const [driverData, setDriverData] = useState();
-  const [seasonYr, setSeasonYr] = useState("2022");
-  const [allYears, setAllYears] = useState([{}]);
+  const [seasonYr, setSeasonYr] = useState("2012");
+  const [allYears, setAllYears] = useState([]);
 
 
   // const updateYear = (event) => {
@@ -17,10 +17,10 @@ export default function Time() {
   //   console.log(seasonYr.current);
   // };
 
-  const updateYear = (e) => {
-    setSeasonYr(e.target.value);
-    console.log(seasonYr);
-  };
+  // const updateYear = (e) => {
+  //   setSeasonYr(e.target.value);
+  //   console.log(seasonYr);
+  // };
 
 
   const options = {
@@ -46,19 +46,19 @@ export default function Time() {
     axios.request(options).then(function (response) {
       console.log(response.data.response);
       setSeasonData(response.data.response);
-      setDriverData({
-        labels: seasonData.map((seasonData) => seasonData.driver.name),
-        datasets: [{
-          label: seasonYr,
-          data: seasonData.map((seasonData) => seasonData.points),
-          tension: 0.4
-        }],
-      });
+      // setDriverData({
+      //   labels: seasonData.map((seasonData) => seasonData.driver.name),
+      //   datasets: [{
+      //     label: seasonYr,
+      //     data: seasonData.map((seasonData) => seasonData.points),
+      //     tension: 0.4
+      //   }],
+      // });
     }).catch(function (error) {
       console.error(error);
     });
 
-  }, []);
+  }, [seasonYr]);
 
 
   useEffect(() => {
@@ -72,10 +72,18 @@ export default function Time() {
 
   console.log(seasonData)
 
-
+  const driveData = {
+    labels: seasonData.map((seasonData) => seasonData.driver.name),
+    datasets: [{
+      label: seasonYr,
+      data: seasonData.map((seasonData) => seasonData.points),
+      tension: 0.4
+    }],
+  }
+  const [selected, setSelected] = useState(options[0]);
   return (
     <div>
-      {/* <LineChart ChartData={driverData} /> */}
+      <LineChart ChartData={driveData} />
       {/* <Line data={driverData} /> */}
       <br />
       {/* <DropdownButton id="dropdown-basic-button" title="Select Season" ref={seasonYr}>
@@ -93,13 +101,16 @@ export default function Time() {
         <Dropdown.Item >2011</Dropdown.Item>
       </DropdownButton> */}
 
-      {/* <Form.Select aria-label="Default select example" style={{ width: 500, marginLeft: 400 }} onChange={updateYear}>
-        <option>Select Season</option>
+      <Form aria-label="Default select example" style={{ width: 500, marginLeft: 400 }}>
+        {/* <option>Select Season</option> */}
+        <select value={selected} 
+       onChange={e => setSeasonYr(e.target.value)}>
         {allYears.map(years => (
-          <option value={years} key={years} onClick={updateYear}>{years}</option>
+          <option value={years} key={years} >{years}</option>
         ))
         }
-      </Form.Select> */}
+        </select>
+      </Form>
 
     </div>
 

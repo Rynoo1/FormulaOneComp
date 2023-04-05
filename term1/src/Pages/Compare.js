@@ -12,6 +12,7 @@ export default function Compare() {
   const driverOneRef = useRef('');
 
   const handleClick = (event) => {
+    console.log(driverOneRef.current.value);
     setDriverOne(driverOneRef.current.value);
   }
 
