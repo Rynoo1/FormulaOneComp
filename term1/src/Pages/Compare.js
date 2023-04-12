@@ -45,7 +45,7 @@ export default function Compare() {
             ref={driverOneRef}
           />
           <Button variant="primary" id="button-addon2" onClick={handleClick}>
-            Button
+            Submit
           </Button>
         </InputGroup>
 
@@ -55,7 +55,15 @@ export default function Compare() {
 
       <div class="w-50">
         <label for="driver2label" class="form-label">Driver Two</label>
-        <input type="text" class="form-control" id="driver2name" placeholder="Sergio Perez"></input>
+        <InputGroup>
+          <Form.Control
+            placeholder="Driver Two"
+            ref={driverOneRef}
+          />
+          <Button variant="primary" id="button-addon2" onClick={handleClick}>
+            Submit
+          </Button>
+        </InputGroup>
         <label for="season2label" class="form-label">Season/Year</label>
         <input type="text" class="form-control" id="driver2season" placeholder="2022"></input>
       </div>

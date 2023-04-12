@@ -3,7 +3,7 @@
 }
 
 .mb-3 {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .App-logo {
@@ -49,4 +49,9 @@
 
 #secondary{
   height: 400px;
+}
+
+#at{
+  color: rgb(0, 153, 255);
+  font-weight: bolder;
 }
