@@ -65,8 +65,7 @@ export default function Time() {
       <LineChart ChartData={driveData} />
       <br />
 
-      <Form aria-label="Default select example" style={{ width: 500, marginLeft: 400 }}>
-        {/* <option>Select Season</option> */}
+      <Form aria-label="Default select example" style={{ width: 500, marginLeft: 400 }} className='pb-4' >
         <select value={selected}
           onChange={e => setSeasonYr(e.target.value)}>
           {allYears.map(years => (

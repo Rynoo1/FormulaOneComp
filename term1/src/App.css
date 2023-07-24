@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-.mb-3 {
+/* .mb-3 {
   padding-top: 50px;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -44,14 +44,38 @@
 #header{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/8f/Max_Verstappen_2022.jpg");
   height: 600px;
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: relative;
 }
 
-#secondary{
-  height: 400px;
+.secondary{
+  /* height: 400px; */
+  background-color: #161B22 !important;
 }
 
 #at{
   color: rgb(0, 153, 255);
   font-weight: bolder;
+}
+
+.backgrey{
+  background-color: #8e9197c3;
+}
+
+.red{
+  color: #ff1801;
+}
+
+.linknav{
+  font-weight: bold !important;
+  font-size: 18px !important;
+}
+
+.nunderline{
+  text-decoration: none;
+}
+
+.lightbg{
+  background-color: #21262D;
 }

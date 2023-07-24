@@ -1,18 +1,17 @@
 import React from 'react'
-import { Container, Nav, NavbarBrand } from "react-bootstrap";
+import { Container, Nav, NavbarBrand, NavLink } from "react-bootstrap";
 import Navbar from 'react-bootstrap/Navbar';
 
 export default function BasicNavbar() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar variant="dark" className='secondary'>
         <Container>
-            <NavbarBrand href="/"> Formula One Comp</NavbarBrand>
-            <Nav className='ne-auto'>
-                <Nav.Link href='/compare' style={{fontSize:18}} > <b>Compare</b> </Nav.Link>
-                <Nav.Link href='/timeline' style={{fontSize:18}} > <b>Timeline</b> </Nav.Link>
+            <NavbarBrand href="/"> <h3> Formula One Comp </h3> </NavbarBrand>
+            <Nav className='ms-auto me-3'>
+                <NavLink href='/compare' className='linknav me-2' > <h4>Compare</h4>  </NavLink>
+                <Nav.Link href='/timeline' className='linknav' > <h4>Timeline</h4> </Nav.Link>
             </Nav>
         </Container>
     </Navbar>
-
   )
 }

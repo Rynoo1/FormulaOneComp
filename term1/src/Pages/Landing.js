@@ -1,9 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect, useRef } from 'react'
-// import LineChart from '../Components/LineChart';
 import DoughnutChart from '../Components/DoughnutChart';
-import { Container, Nav, NavbarBrand } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function Landing() {
 
@@ -42,57 +41,60 @@ export default function Landing() {
   }
 
   return (
-    <div>
+    <div className='secondary'>
       <div id='header' >
-        <h1 style={{ padding: 50 }} >
-          Welcome to Formula One Comparisons.
-        </h1>
+        <h1 className='pt-5'> <span className='backgrey'> Welcome to Formula One Comparisons. </span> </h1>
       </div>
 
-      <div id='secondary' className="text-light p-3" style={{ display: "flex", alignItems: "center", height: "100%", backgroundColor: "#161B22" }}>
-        <h3 className='mb-3'>
-          Formula One Comparisons allows you to compare various stats between drivers over the seasons. <br /> <br />
-          This doughnut chart compares the pooints of teams in the 2021 season.
+      <Container flex className='secondary text-light pt-3 pb-3'>
+        <h1 className='mb-4'>About</h1>        
+        <Row>
+          <Col>
+            <h3 className='mb-3'>
+              Formula One Comparisons allows you to compare various stats between drivers over the seasons. <br /> <br />
+              This doughnut chart compares the points of all teams in the 2021 season. <br/> <br/> By clicking on a team name you are able to remove them from the chart and compare the remaining teams!
+            </h3>        
+          </Col>
 
-        </h3>
+          <Col className=''>
+            <div style={{ width:'500px'}}>
+              <DoughnutChart ChartData={sendingData} />
+            </div>        
+          </Col>   
+        </Row>
 
-        <div style={{ width: 600, }}>
-          <DoughnutChart ChartData={sendingData} />
-        </div>
 
-      </div>
+      </Container>
 
-      <div className='text-light p-3' style={{ backgroundColor: "#21262D" }}>
+      <div className='text-light px-5 lightbg'>
 
         {/* 21262D 161B22 89929B */}
 
         <h4 className='pt-5'>
-          On the <a id='at' href='/timeline'>timeline</a> page you get a breakdown of all the drivers points in any given season.
+          On the <a id='at' href='/timeline' className='link-light'>timeline</a> page you get a breakdown of all the drivers points in any given season. Change the season to see information about the drivers and points from that season. Go as far back as 2012 and even as new as the current ongoing season!
         </h4>
 
         <h4 className='p-5'>
-          On the <a id='at' href='/compare'>comparisons</a> page you get to choose two Formula One drivers and a season to compare each other to.
+          The <a id='at' href='/compare' className='link-light'>comparisons</a> page allows you to choose two Formula One drivers and compare career stats such as career points, total podiums and total world championship titles.
         </h4>
 
       </div>
 
-      <div className="text-light p-4" style={{ display: "flex", alignItems: "center", height: "100%", backgroundColor: "#161B22" }}>
+      <div className="text-light p-4 secondary" style={{ display: "flex"}}>
 
-        <h4>
-          Formula One Comp
+        <h4 className='mx-auto'>
+          <a href='/' className='link-light nunderline'>Formula One Comp</a>
         </h4>
 
-        <h4 className=' mx-auto'>
-          Timeline
+        <h4 className='mx-auto'>
+          <a href='/compare' className='link-light nunderline'>Compare</a>
         </h4>
 
-        <h4 className=' mx-auto'>
-          Compare
+        <h4 className='mx-auto'>
+          <a href='/time' className='link-light nunderline'>Timeline</a>
         </h4>
 
       </div>
-
-
 
     </div>
   )
