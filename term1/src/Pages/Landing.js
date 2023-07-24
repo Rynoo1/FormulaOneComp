@@ -91,7 +91,7 @@ export default function Landing() {
         </h4>
 
         <h4 className='mx-auto'>
-          <a href='/time' className='link-light nunderline'>Timeline</a>
+          <a href='/timeline' className='link-light nunderline'>Timeline</a>
         </h4>
 
       </div>
