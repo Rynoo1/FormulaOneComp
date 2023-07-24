@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Bar } from 'react-chartjs-2';
 
@@ -38,18 +38,22 @@ function CompChart({ Input1, Input2 }) {
         }
     };
 
-    axios.request(getOne).then(function (response) {
-        console.log(response.data.response);
-        setDrivOne({ dname: response.data.response[0].abbr, points: response.data.response[0].career_points, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
-    }).catch(function (error) {
-        console.error(error);
+    useEffect(() => {
+        axios.request(getOne).then(function (response) {
+            console.log(response.data.response);
+            setDrivOne({ dname: response.data.response[0].abbr, points: response.data.response[0].career_points, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
+        }).catch(function (error) {
+            console.error(error);
+        },);
     }, []);
 
-    axios.request(getTwo).then(function (response) {
-        console.log(response.data.response);
-        setDrivTwo({ dname: response.data.response[0].abbr, points: response.data.response[0].career_points, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
-    }).catch(function (error) {
-        console.error(error);
+    useEffect(() => {
+        axios.request(getTwo).then(function (response) {
+            console.log(response.data.response);
+            setDrivTwo({ dname: response.data.response[0].abbr, points: response.data.response[0].career_points, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
+        }).catch(function (error) {
+            console.error(error);
+        },);
     }, []);
 
     const Abbr = ([
@@ -83,11 +87,11 @@ function CompChart({ Input1, Input2 }) {
             data: Championships,
             backgroundColor: ['rgb(253, 217, 0)'],
         }
-    ],
+        ],
     }
 
     return (
-        <Bar data={ chartDataPoints } />
+        <Bar data={chartDataPoints} />
     )
 }
 
