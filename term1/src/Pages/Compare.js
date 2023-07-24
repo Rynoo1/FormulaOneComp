@@ -10,7 +10,7 @@ export default function Compare() {
   const [driverOneFin, setDriverOneFin] = useState('');
   const [driverTwoFin, setDriverTwoFin] = useState('');
   const [displayChart, setDisplayChart] = useState(false);
-  const driverOneRef = useRef(null);
+  const driverOneRef = useRef('');
   const driverTwoRef = useRef('');
 
   const handleClick = () => {
