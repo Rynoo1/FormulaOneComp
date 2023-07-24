@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
-    <div className="App lightbg">
+    <div className="App">
       <BasicNavbar/>
       <Routes>
         <Route path='/' element={<Landing/>} />
