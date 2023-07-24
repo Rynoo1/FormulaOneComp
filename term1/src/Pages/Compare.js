@@ -23,7 +23,6 @@ export default function Compare() {
 
   return (
     <Container fluid className="py-3 px-4 lightbg text-light">
-      <Form onSubmit={handleClick}>
         <Row>
           <Col>
             <label for="driver1label" class="form-label">Driver One</label>
@@ -42,7 +41,6 @@ export default function Compare() {
           </Col>
 
         </Row>
-      </Form>
 
       <div className='h-50'>
         {displayChart && <CompChart Input1={driverOneFin} Input2={driverTwoFin} />}

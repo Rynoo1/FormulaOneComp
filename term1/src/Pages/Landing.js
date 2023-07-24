@@ -43,7 +43,7 @@ export default function Landing() {
   return (
     <div className='secondary'>
       <div id='header' >
-        <h1 className='pt-5'> <span className='backgrey'> Welcome to Formula One Comparisons. </span> </h1>
+        <h1 className='pt-5'> <span className='backgrey p-2 rounded'> Welcome to Formula One Comparisons </span> </h1>
       </div>
 
       <Container flex className='secondary text-light pt-3 pb-3'>
