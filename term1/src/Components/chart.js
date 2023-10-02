@@ -1,21 +1,21 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { Bar } from 'react-chartjs-2';
+import { Radar } from 'react-chartjs-2';
 
-function CompChart({ Input1, Input2 }) {
+function Chart({ Input1, Input2 }) {
 
     const [drivOne, setDrivOne] = useState({
         dname: "",
+        entered: 0,
         seasons: 0,
-        pod: 0,
-        champs: 0
+        points: 0
     });
     const [drivTwo, setDrivTwo] = useState({
         dname: "",
+        entered: 0,
         seasons: 0,
-        pod: 0,
-        champs: 0
+        points: 0
     });
 
     const getOne = {
@@ -41,7 +41,7 @@ function CompChart({ Input1, Input2 }) {
     useEffect(() => {
         axios.request(getOne).then(function (response) {
             console.log(response.data.response);
-            setDrivOne({ dname: response.data.response[0].abbr, seasons: response.data.response[0].teams.length, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
+            setDrivOne({ dname: response.data.response[0].abbr, entered: response.data.response[0].grands_prix_entered, seasons: response.data.response[0].teams.length, points: response.data.response[0].career_points })
         }).catch(function (error) {
             console.error(error);
         },);
@@ -50,49 +50,33 @@ function CompChart({ Input1, Input2 }) {
     useEffect(() => {
         axios.request(getTwo).then(function (response) {
             console.log(response.data.response);
-            setDrivTwo({ dname: response.data.response[0].abbr, seasons: response.data.response[0].teams.length, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
+            setDrivTwo({ dname: response.data.response[0].abbr, entered: response.data.response[0].grands_prix_entered, seasons: response.data.response[0].teams.length, points: response.data.response[0].career_points })
         }).catch(function (error) {
             console.error(error);
         },);
     }, []);
 
-    const Abbr = ([
-        drivOne.dname, drivTwo.dname
-    ]);
-    const Seasons = ([
-        drivOne.seasons, drivTwo.seasons
-    ]);
-    const Podiums = ([
-        drivOne.pod, drivTwo.pod
-    ]);
-    const Championships = ([
-        drivOne.champs, drivTwo.champs
-    ]);
-
 
     const chartDataPoints = {
-        labels: Abbr,
+        labels: [
+            'Grand Prix Entered',
+            'Number of Seasons',
+            'Career Points'
+        ],
         datasets: [{
-            label: 'Seasons',
-            data: Seasons,
-            backgroundColor: ['rgb(255, 24, 1)'],
+            label: drivOne.dname,
+            data: [drivOne.entered, drivOne.seasons, drivOne.points]
         },
         {
-            label: 'All Time Podiums',
-            data: Podiums,
-            backgroundColor: ['rgb(0, 161, 155)'],
-        },
-        {
-            label: 'Total Championships',
-            data: Championships,
-            backgroundColor: ['rgb(253, 217, 0)'],
+            label: drivTwo.dname,
+            data: [drivTwo.entered, drivTwo.seasons, drivTwo.points]
         }
         ],
     }
 
     return (
-        <Bar data={chartDataPoints} />
+        <Radar data={chartDataPoints} />
     )
 }
 
-export default CompChart
+export default Chart

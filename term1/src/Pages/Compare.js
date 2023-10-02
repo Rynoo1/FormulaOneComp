@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { Col, Row, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CompChart from '../Components/Comp';
+import Chart from '../Components/chart';
 
 export default function Compare() {
 
@@ -44,6 +45,7 @@ export default function Compare() {
 
       <div className='h-50'>
         {displayChart && <CompChart Input1={driverOneFin} Input2={driverTwoFin} />}
+        {displayChart && <Chart Input1={driverOneFin} Input2={driverTwoFin} />}
       </div>
 
 
