@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import axios from "axios";
 import { Bar } from 'react-chartjs-2';
 
 function CompChart({ Input1, Input2 }) {
@@ -18,73 +17,39 @@ function CompChart({ Input1, Input2 }) {
         champs: 0
     });
 
-    const getOne = {
-        method: 'GET',
-        url: 'https://api-formula-1.p.rapidapi.com/drivers',
-        params: { search: Input1 },
-        headers: {
-            'X-RapidAPI-Key': '8ef8fc27c6msh7504b9ec3178fa1p1a705fjsnfb988f103d4a',
-            'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
-        }
-    };
-
-    const getTwo = {
-        method: 'GET',
-        url: 'https://api-formula-1.p.rapidapi.com/drivers',
-        params: { search: Input2 },
-        headers: {
-            'X-RapidAPI-Key': '8ef8fc27c6msh7504b9ec3178fa1p1a705fjsnfb988f103d4a',
-            'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
-        }
-    };
-
     useEffect(() => {
-        axios.request(getOne).then(function (response) {
-            console.log(response.data.response);
-            setDrivOne({ dname: response.data.response[0].abbr, seasons: response.data.response[0].teams.length, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
-        }).catch(function (error) {
-            console.error(error);
-        },);
-    }, []);
 
-    useEffect(() => {
-        axios.request(getTwo).then(function (response) {
-            console.log(response.data.response);
-            setDrivTwo({ dname: response.data.response[0].abbr, seasons: response.data.response[0].teams.length, pod: response.data.response[0].podiums, champs: response.data.response[0].world_championships })
-        }).catch(function (error) {
-            console.error(error);
-        },);
-    }, []);
+        setDrivOne({
+            dname: Input1.data.response[0].abbr,
+            seasons: Input1.data.response[0].teams.length,
+            pod: Input1.data.response[0].podiums,
+            champs: Input1.data.response[0].world_championships
+        });
 
-    const Abbr = ([
-        drivOne.dname, drivTwo.dname
-    ]);
-    const Seasons = ([
-        drivOne.seasons, drivTwo.seasons
-    ]);
-    const Podiums = ([
-        drivOne.pod, drivTwo.pod
-    ]);
-    const Championships = ([
-        drivOne.champs, drivTwo.champs
-    ]);
+        setDrivTwo({
+            dname: Input2.data.response[0].abbr,
+            seasons: Input2.data.response[0].teams.length,
+            pod: Input2.data.response[0].podiums,
+            champs: Input2.data.response[0].world_championships
+        });
 
+    }, [Input1, Input2]);
 
     const chartDataPoints = {
-        labels: Abbr,
+        labels: [drivOne.dname, drivTwo.dname],
         datasets: [{
             label: 'Seasons',
-            data: Seasons,
+            data: [drivOne.seasons, drivTwo.seasons],
             backgroundColor: ['rgb(255, 24, 1)'],
         },
         {
             label: 'All Time Podiums',
-            data: Podiums,
+            data: [drivOne.pod, drivTwo.pod],
             backgroundColor: ['rgb(0, 161, 155)'],
         },
         {
             label: 'Total Championships',
-            data: Championships,
+            data: [drivOne.champs, drivTwo.champs],
             backgroundColor: ['rgb(253, 217, 0)'],
         }
         ],
