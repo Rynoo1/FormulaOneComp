@@ -14,7 +14,7 @@ export default function Landing() {
     url: 'https://api-formula-1.p.rapidapi.com/rankings/teams',
     params: { season: '2021' },
     headers: {
-      'X-RapidAPI-Key': '8ef8fc27c6msh7504b9ec3178fa1p1a705fjsnfb988f103d4a',
+      'X-RapidAPI-Key': '',
       'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
     }
   };
