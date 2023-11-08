@@ -84,7 +84,7 @@ export default function Compare() {
         {/* {polar} */}
       </div>
       
-      <div style={{height: "1000px", margin: "auto",}}>
+      <div style={{height: "1000px", marginRight: "auto",}}>
         {/* {bar}
         {radar} */}
         {polar}
