@@ -1,4 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 ![GitHub repo size](https://img.shields.io/github/repo-size/Rynoo1/term-1?color=lightblue)
 ![GitHub language count](https://img.shields.io/github/languages/count/Rynoo1/term-1?color=lightblue)
@@ -19,7 +18,7 @@
     Compare your favourite Formula One Drivers all in one place
     <br />
     ·
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://drive.google.com/file/d/11tNR5JEAiii9poszkBp_BW2C9hIOmZ8w/view?usp=sharing">View Demo</a>
     ·
   </p>
 </div>
@@ -174,8 +173,7 @@ The API schema was slightly complex in certain parts, with the data being nested
 <!-- Final Outcome -->
 ## Final Outcome
 
-- demonstration video
-- promotional video / deployed link
+* [Demo Video](https://drive.google.com/file/d/11tNR5JEAiii9poszkBp_BW2C9hIOmZ8w/view?usp=sharing)
 
 <!-- LICENSE -->
 ## License
