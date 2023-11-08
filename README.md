@@ -1,29 +1,8 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/Rynoo1/term-1?color=lightblue)
 ![GitHub language count](https://img.shields.io/github/languages/count/Rynoo1/term-1?color=lightblue)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Rynoo1/term-1?color=lightblue)
-
-
 
 
 <!-- PROJECT LOGO -->
@@ -66,7 +45,8 @@
       </ul>
     </li>
     <li><a href="#project-features">Project Features</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#development-process">Development Process</a></li>
+    <li><a href="#final-outcome">Final Outcome</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -191,6 +171,7 @@ The API schema was slightly complex in certain parts, with the data being nested
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Final Outcome -->
 ## Final Outcome
 
 - demonstration video
