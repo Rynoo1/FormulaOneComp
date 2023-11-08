@@ -48,7 +48,7 @@ function Chart({ Input1, Input2 }) {
             label: drivTwo.dname,
             data: [drivTwo.entered, drivTwo.seasons, drivTwo.podiums]
         }
-        ],
+        ]
     }
 
     return (

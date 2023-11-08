@@ -52,7 +52,7 @@ function CompChart({ Input1, Input2 }) {
             data: [drivOne.champs, drivTwo.champs],
             backgroundColor: ['rgb(253, 217, 0)'],
         }
-        ],
+        ]
     }
 
     return (

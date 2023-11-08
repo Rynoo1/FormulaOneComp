@@ -52,7 +52,7 @@ export default function Landing() {
           <Col>
             <h3 className='mb-3'>
               Formula One Comparisons allows you to compare various stats between drivers over the seasons. <br /> <br />
-              This doughnut chart compares the points of all teams in the 2021 season. <br/> <br/> By clicking on a team name you are able to remove them from the chart and compare the remaining teams!
+              The API-FORMULA-1 API has many different options for stats or data for specific seasons, tracks, teams, etc. We use data from the drivers section such as their abbreviation, career points and podiums, world championships and use the teams array to calculate an estimate of how many seasons they have raced in.  <br/> <br/> This doughnut chart compares the points between all the teams in the 2021 season.
             </h3>        
           </Col>
 
